@@ -1,0 +1,54 @@
+@import "../../ColorsModule/Colors.module.scss";
+
+.projects-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .welcome-title {
+        width: 100%;
+        max-width: 500px;
+        // font-family: "Caesar Dressing";
+        font-family: "Roboto";
+        font-size: 38px;
+        align-self: baseline;
+    }
+    .welcome-msg {
+        width: 100%;
+        max-width: 700px;
+        align-self: baseline;
+    }
+
+    button {
+        margin-top: 50px;
+    }
+
+    .projects-container {
+        width: 100%;
+        margin-top: 60px;
+        border-top: 1px solid $primary;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .projects-category {
+            margin-top: 30px;
+            align-self: baseline;
+        }
+
+        .projects-container-title {
+            margin-top: 20px;
+            font-size: 32px;
+            // font-family: "Caesar Dressing";
+            font-family: "Roboto";
+        }
+
+        .projects-container-content {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+    }
+}

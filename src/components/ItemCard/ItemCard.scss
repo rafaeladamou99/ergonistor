@@ -1,0 +1,21 @@
+.item-card-container {
+    width: 100%;
+    max-width: 360px;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .item-card-img {
+        height: 270px;
+        width: 100%;
+    }
+
+    .item-card-title {
+        font-size: 24px;
+    }
+
+    .item-card-description {
+        font-size: 18px;
+    }
+}

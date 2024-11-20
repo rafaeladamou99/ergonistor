@@ -1,0 +1,59 @@
+@import "../../ColorsModule/Colors.module.scss";
+
+.about-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .welcome-title {
+    width: 100%;
+    max-width: 500px;
+    font-family: "Roboto", sans-serif;
+    font-size: 38px;
+    align-self: baseline;
+  }
+
+  .welcome-msg {
+    width: 100%;
+    max-width: 700px;
+    align-self: baseline;
+  }
+
+  button {
+    margin-top: 50px;
+  }
+
+  .about-container {
+    width: 100%;
+    margin-top: 60px;
+    border-top: 1px solid $primary;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .about-category {
+      margin-top: 30px;
+      align-self: baseline;
+    }
+
+    .about-container-title {
+      margin-top: 20px;
+      font-size: 32px;
+      // font-family: "Caesar Dressing";
+      font-family: "Roboto";
+    }
+
+    .about-container-content {
+      margin-top: 30px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .about-people {
+      margin-top: 20px;
+    }
+  }
+}

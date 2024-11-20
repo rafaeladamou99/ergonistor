@@ -1,0 +1,28 @@
+@import "../../ColorsModule/Colors.module.scss";
+
+.bottom-bar {
+  width: 100%;
+  margin-top: 60px;
+  border-top: 1px solid $primary;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 5px;
+
+  a {
+    all: unset;
+    display: flex;
+    align-items: center;
+  }
+
+  .contact-icons {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    height: fit-content;
+    width: min-content;
+    align-items: center;
+    justify-content: center;
+  }
+}

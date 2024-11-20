@@ -1,0 +1,30 @@
+@import "../../ColorsModule/Colors.module.scss";
+
+.custom-button {
+  background-color: $primary !important;
+  border-color: $primary !important;
+  color: white !important;
+  font-family: "Roboto" !important;
+  // font-family: "Caesar Dressing" !important;
+  min-width: 140px !important;
+  height: 45px !important;
+  border-radius: 100px !important;
+  border-width: 2px !important;
+  font-size: 18px !important;
+  transition: filter 0.3s ease-in-out;
+}
+
+.custom-button:hover {
+  filter: brightness(0.8);
+  scale: 1.05;
+}
+
+.custom-button-secondary {
+  background-color: white !important;
+  color: $primary !important;
+}
+
+// .custom-button-secondary:hover {
+//     background-color: rgba($primary, 0.001) !important;
+//     color: $primary !important;
+//   }
