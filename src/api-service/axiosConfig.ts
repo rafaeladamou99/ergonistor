@@ -5,7 +5,7 @@ const getAuthToken = () => {
 };
 
 const axiosInstance = axios.create({
-  baseURL: "https://ergonistor-be-production.up.railway.app:8000",
+  baseURL: "https://ergonistor-be-production.up.railway.app",
   timeout: 10000,
   headers: {
     "Content-Type": "application/json",
