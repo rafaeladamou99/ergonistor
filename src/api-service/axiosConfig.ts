@@ -5,7 +5,7 @@ const getAuthToken = () => {
 };
 
 const axiosInstance = axios.create({
-  baseURL: "http://192.168.10.5:8000",
+  baseURL: "http://192.168.10.10:8000",
   timeout: 10000,
   headers: {
     "Content-Type": "application/json",

@@ -4,8 +4,9 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 import CallIcon from "@mui/icons-material/Call";
 import EmailIcon from "@mui/icons-material/Email";
 import { Link } from "react-router-dom";
+import { ContentProp } from "../../types/types";
 
-const BottomBar = () => {
+const BottomBar = ({ content }: ContentProp) => {
   const latitude = "50.7926524";
   const longitude = "-1.0960133";
   return (
@@ -18,15 +19,17 @@ const BottomBar = () => {
           to={`https://www.google.com/maps?q=${latitude},${longitude}`}
           target="_blank"
         >
-          <LocationOnIcon />
+          <LocationOnIcon className="cursor-pointer" />
         </Link>
-        <Link to="tel:+35799621861">
-          <CallIcon sx={{ fill: "#2FCC77" }} />
+        <Link to={`tel:${content?.contact.telephone.value}`}>
+          <CallIcon sx={{ fill: "#2FCC77" }} className="cursor-pointer" />
         </Link>
-        <Link to="mailto:rafail-adamou@hotmail.co.uk">
-          <EmailIcon sx={{ fill: "#2F88FF" }} />
+        <Link to={`mailto:${content?.contact.email.value}`}>
+          <EmailIcon sx={{ fill: "#2F88FF" }} className="cursor-pointer" />
         </Link>
-        <LinkedInIcon sx={{ fill: "#0a66c2" }} />
+        <Link to={`mailto:${content?.contact.email.value}`}>
+          <LinkedInIcon sx={{ fill: "#0a66c2" }} className="cursor-pointer" />
+        </Link>
       </div>
     </div>
   );

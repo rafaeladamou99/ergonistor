@@ -17,7 +17,7 @@ const AppRoutes = () => {
   const router = createBrowserRouter([
     {
       path: Routes.Home.path,
-      element: <Router />,
+      element: <Router content={data} />,
       errorElement: <Error />,
       children: [
         { path: Routes.Home.path, element: <Home content={data} /> },
