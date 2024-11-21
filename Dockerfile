@@ -23,7 +23,7 @@ FROM nginx:alpine
 COPY --from=build /app/build /usr/share/nginx/html
 
 # Step 9: Expose port 80 to access the app
-EXPOSE 80
+EXPOSE 3000
 
 # Step 10: Start the Nginx server to serve the React app
 CMD ["nginx", "-g", "daemon off;"]
