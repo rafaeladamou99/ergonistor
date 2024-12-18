@@ -33,9 +33,9 @@ const Projects = ({ content }: ContentProp) => {
           {content?.projects.subtitle}
         </div>
         <div className="projects-container-content">
-          {data?.map(({ _id, img, paragraphs, title }, index) => (
+          {data?.map(({ _id, img1, paragraphs, title }, index) => (
             <ItemCard
-              imageUrl={img}
+              imageUrl={img1}
               title={title}
               description={paragraphs?.[0] ?? ""}
               onClick={openProject(_id)}

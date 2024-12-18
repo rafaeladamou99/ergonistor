@@ -1,17 +1,18 @@
-import ItemCard from "../ItemCard/ItemCard";
-import car1 from "../Home/imgs/car-2.jpg";
-import "./Services.scss";
-import { ContentProp, Service } from "../../types/types";
-import useApi from "../../api-service/useApiService";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import useApi from "../../api-service/useApiService";
+import { ContentProp, ServiceCategories } from "../../types/types";
+import ItemCard from "../ItemCard/ItemCard";
+import "./ServicesCategories.scss";
 
 const Services = ({ content }: ContentProp) => {
   const navigate = useNavigate();
-  const { data, get } = useApi<Service[], undefined>("service");
+  const { data, get } = useApi<ServiceCategories[], undefined>(
+    "service-categories",
+  );
 
   const openService = (id: string) => () => {
-    navigate(id);
+    navigate(`/service-category/${id}`);
   };
 
   useEffect(() => {
@@ -26,11 +27,11 @@ const Services = ({ content }: ContentProp) => {
           {content?.services.subtitle}
         </div>
         <div className="services-container-content">
-          {data?.map(({ _id, img, paragraphs, title }, index) => (
+          {data?.map(({ _id, img, title, description }, index) => (
             <ItemCard
               imageUrl={img}
               title={title}
-              description={paragraphs?.[0] ?? ""}
+              description={description ?? ""}
               onClick={openService(_id)}
               className="animate pop"
               style={{ animationDelay: `${index * 0.4}s` }}

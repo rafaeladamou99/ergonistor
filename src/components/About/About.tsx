@@ -28,7 +28,7 @@ const About = ({ content }: ContentProp) => {
           style={{ marginTop: "20px" }}
         /> */}
         {/* <div className="about-container-title">{content?.about.key_people}</div> */}
-        <div className="w-full mt-5 flex gap-6 justify-center flex-wrap">
+        <div className="w-full mt-5 flex gap-6 justify-center flex-wrap items-start">
           {content?.about.key_people.map((person) => (
             <Person
               imageUrl={person.img}

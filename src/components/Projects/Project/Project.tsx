@@ -1,23 +1,46 @@
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import { useParams } from "react-router-dom";
 import useApi from "../../../api-service/useApiService";
 import { Project as IProject } from "../../../types/types";
+import { ImageSlider } from "../../ImageSlider/ImageSlider";
 
 const Project = () => {
   const { projectId } = useParams<{ projectId: string }>();
   const { get, data } = useApi<IProject>(`/project/${projectId}`);
 
+  const sliderImgs = useMemo(() => {
+    const imgArr: string[] = [];
+    data?.img1 && imgArr.push(data.img1);
+    data?.img2 && imgArr.push(data.img2);
+    data?.img3 && imgArr.push(data.img3);
+    data?.img4 && imgArr.push(data.img4);
+    data?.img5 && imgArr.push(data.img5);
+    return imgArr.map((img) => ({
+      url: img,
+      alt: img,
+    }));
+  }, [data]);
+
   useEffect(() => {
     get();
   }, []);
+
   return (
-    <div className="w-auto flex flex-col items-start gap-4">
-      <img
+    <div
+      style={{
+        width: "100%",
+        aspectRatio: "16 / 7",
+        margin: "0 auto",
+      }}
+      className="h-fit"
+    >
+      {/* <img
         key={data?.img}
         src={data?.img}
         alt={data?.img}
         className="item-card-img w-full aspect-video"
-      />
+      /> */}
+      <ImageSlider images={sliderImgs} />
       <div className="app-container w-auto flex flex-col items-start gap-4">
         <div className="w-full max-w-[500px] text-4xl self-baseline">
           {data?.title}
@@ -25,6 +48,8 @@ const Project = () => {
         <div className="flex flex-col gap-3 text-xl justify-start p-4">
           {data?.paragraphs?.map((paragraph) => <span>{paragraph}</span>)}
         </div>
+        <span>Architect: {data?.architect}</span>
+        <span>Project Status: {data?.status}</span>
       </div>
     </div>
   );

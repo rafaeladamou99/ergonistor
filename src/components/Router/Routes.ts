@@ -12,6 +12,20 @@ export const Routes = {
       routerPath: "services/:serviceId",
     },
   },
+  ServicesCategories: {
+    name: "Services",
+    path: "/services",
+    ServiceCategory: {
+      name: "Service",
+      path: (category: number) => `/service-category/${category}`,
+      routerPath: "service-category/:category",
+      Service: {
+        name: "Service",
+        path: (serviceId: number) => `/services/${serviceId}`,
+        routerPath: "services/:serviceId",
+      },
+    },
+  },
   Projects: {
     name: "Projects",
     path: "/projects",

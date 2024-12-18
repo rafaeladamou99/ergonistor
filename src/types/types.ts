@@ -59,6 +59,17 @@ export interface ContentResponse extends ContentProp {
 export interface Service {
   title: string;
   paragraphs: string[];
+  img1: string;
+  img2?: string;
+  img3?: string;
+  img4?: string;
+  img5?: string;
+  _id: string;
+}
+
+export interface ServiceCategories {
+  title: string;
+  description: string;
   img: string;
   _id: string;
 }
@@ -66,7 +77,13 @@ export interface Service {
 export interface Project {
   title: string;
   paragraphs: string[];
-  img: string;
+  img1: string;
+  img2?: string;
+  img3?: string;
+  img4?: string;
+  img5?: string;
+  architect?: string;
+  status?: string;
   _id: string;
 }
 

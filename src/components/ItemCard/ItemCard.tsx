@@ -20,7 +20,7 @@ const ItemCard = ({
 }: IItemCard) => {
   return (
     <div
-      className={`item-card-container cursor-pointer ${className ?? ""}`}
+      className={`item-card-container cursor-pointer custom-hover-effect ${className ?? ""}`}
       onClick={onClick}
       style={style}
     >

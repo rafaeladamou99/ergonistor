@@ -10,8 +10,9 @@ import Projects from "./components/Projects/Projects";
 import Router from "./components/Router/Router";
 import { Routes } from "./components/Router/Routes";
 import Service from "./components/Services/Service/Service";
-import Services from "./components/Services/Services";
+import Services from "./components/Services/ServicesCategories";
 import useApiContext from "./api-context/useApiContext";
+import ServicesCategory from "./components/Services/ServicesCategory";
 const AppRoutes = () => {
   const { data, loading, error } = useApiContext();
   const router = createBrowserRouter([
@@ -21,8 +22,18 @@ const AppRoutes = () => {
       errorElement: <Error />,
       children: [
         { path: Routes.Home.path, element: <Home content={data} /> },
-        { path: Routes.Services.path, element: <Services content={data} /> },
-        { path: Routes.Services.Service.routerPath, element: <Service /> },
+        {
+          path: Routes.ServicesCategories.path,
+          element: <Services content={data} />,
+        },
+        {
+          path: Routes.ServicesCategories.ServiceCategory.routerPath,
+          element: <ServicesCategory content={data} />,
+        },
+        {
+          path: Routes.ServicesCategories.ServiceCategory.Service.routerPath,
+          element: <Service />,
+        },
         { path: Routes.Projects.path, element: <Projects content={data} /> },
         { path: Routes.Projects.Project.routerPath, element: <Project /> },
         { path: Routes.About.path, element: <About content={data} /> },

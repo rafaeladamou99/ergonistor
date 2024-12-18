@@ -21,25 +21,19 @@ export const ImageSlider = ({ images, message = "" }: ImageSliderProps) => {
   const navigate = useNavigate();
   const [imageIndex, setImageIndex] = useState(0);
 
-  useEffect(() => {
-    const slideInterval = setInterval(showNextImage, DELAY);
-
-    return () => clearInterval(slideInterval);
-  }, [imageIndex]);
-
-  function showNextImage() {
+  const showNextImage = () => {
     setImageIndex((index) => {
-      if (index === images.length - 1) return 0;
+      if (index >= images.length - 1) return 0;
       return index + 1;
     });
-  }
+  };
 
-  function showPrevImage() {
+  const showPrevImage = () => {
     setImageIndex((index) => {
       if (index === 0) return images.length - 1;
       return index - 1;
     });
-  }
+  };
 
   const navigateToProjects = () => {
     navigate("/projects");
@@ -48,6 +42,12 @@ export const ImageSlider = ({ images, message = "" }: ImageSliderProps) => {
   const navigateToContactUs = () => {
     navigate("/contact");
   };
+
+  useEffect(() => {
+    const slideInterval = setInterval(showNextImage, DELAY);
+
+    return () => clearInterval(slideInterval);
+  }, [imageIndex, showNextImage]);
   return (
     <section
       aria-label="Image Slider"
@@ -115,15 +115,17 @@ export const ImageSlider = ({ images, message = "" }: ImageSliderProps) => {
           </button>
         ))}
       </div>
-      <div className="img-info-label flex flex-col items-center justify-center absolute animate pop delay-4 max-lg:hidden">
-        <p>{message}</p>
-        <Button type={EButtonType.secondary} onClick={navigateToProjects}>
-          Projects
-        </Button>
-        <Button type={EButtonType.primary} onClick={navigateToContactUs}>
-          Contact Us
-        </Button>
-      </div>
+      {message && (
+        <div className="img-info-label flex flex-col items-center justify-center absolute animate pop delay-4 max-lg:hidden">
+          <p>{message}</p>
+          <Button type={EButtonType.secondary} onClick={navigateToProjects}>
+            Projects
+          </Button>
+          <Button type={EButtonType.primary} onClick={navigateToContactUs}>
+            Contact Us
+          </Button>
+        </div>
+      )}
     </section>
   );
 };
