@@ -12,18 +12,16 @@ import { ImageSlider } from "../ImageSlider/ImageSlider";
 import ItemCard from "../ItemCard/ItemCard";
 import "./Home.scss";
 
-const Home = ({ content }: ContentProp) => {
+const Home = ({
+  content,
+  sliderData,
+}: ContentProp & { sliderData: [Slider] | null }) => {
   const navigate = useNavigate();
 
   const { data: servicesData, get: getServices } = useApi<
     ServiceCategories[],
     undefined
   >("service-categories");
-  const {
-    data: sliderData,
-    get: getSlider,
-    isSuccess: isSliderSuccess,
-  } = useApi<[Slider], undefined>("slider");
 
   const [sliderImgs, setSliderImgs] = useState<{ url: string; alt: string }[]>(
     [],
@@ -38,16 +36,13 @@ const Home = ({ content }: ContentProp) => {
   };
 
   useEffect(() => {
-    getServices();
-    getSlider();
-  }, []);
-
-  useEffect(() => {
     setSliderImgs(
-      (sliderData?.[0]?.imgs ?? []).map((url) => ({
-        url,
-        alt: url,
-      })),
+      (sliderData?.[0]?.imgs ?? [])
+        .filter((url) => !!url)
+        .map((url) => ({
+          url,
+          alt: url,
+        })),
     );
   }, [sliderData]);
 

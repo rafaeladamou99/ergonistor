@@ -13,15 +13,25 @@ import Service from "./components/Services/Service/Service";
 import Services from "./components/Services/ServicesCategories";
 import useApiContext from "./api-context/useApiContext";
 import ServicesCategory from "./components/Services/ServicesCategory";
+import { Slider } from "./types/types";
+import useApi from "./api-service/useApiService";
+import { useEffect } from "react";
 const AppRoutes = () => {
   const { data, loading, error } = useApiContext();
+
+  const { data: sliderData, get: getSlider } = useApi<[Slider], undefined>(
+    "slider",
+  );
   const router = createBrowserRouter([
     {
       path: Routes.Home.path,
-      element: <Router content={data} />,
+      element: <Router content={data} logo={sliderData?.[0]?.logo}/>,
       errorElement: <Error />,
       children: [
-        { path: Routes.Home.path, element: <Home content={data} /> },
+        {
+          path: Routes.Home.path,
+          element: <Home content={data} sliderData={sliderData} />,
+        },
         {
           path: Routes.ServicesCategories.path,
           element: <Services content={data} />,
@@ -43,6 +53,9 @@ const AppRoutes = () => {
     },
   ]);
 
+  useEffect(() => {
+    getSlider();
+  }, []);
   return <RouterProvider router={router} />;
 };
 

@@ -16,6 +16,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { Routes } from "../Router/Routes";
 import Colors from "../../ColorsModule/Colors.module.scss";
 import "./NavigationBar.scss";
+import { ContentProp } from "../../types/types";
 
 const pages = [
   Routes.Home,
@@ -26,7 +27,7 @@ const pages = [
   Routes.Contact,
 ];
 
-const NavigationBar = () => {
+const NavigationBar = ({ logo }: { logo?: string }) => {
   const navigate = useNavigate();
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
 
@@ -61,30 +62,36 @@ const NavigationBar = () => {
             className="menu-items logo"
             onClick={navigateTo(Routes.Home.path)}
           >
-            <AdbIcon
-              sx={{
-                display: { xs: "none", md: "flex" },
-                mr: 1,
-                color: Colors.primary,
-                cursor: "pointer",
-              }}
-            />
-            <Typography
-              variant="h6"
-              noWrap
-              sx={{
-                mr: 2,
-                display: { xs: "none", md: "flex" },
-                fontFamily: "Roboto",
-                // fontFamily: "Caesar Dressing",
-                fontWeight: 700,
-                letterSpacing: ".3rem",
-                color: Colors.primary,
-                textDecoration: "none",
-              }}
-            >
-              ERGONISTOR
-            </Typography>
+            {logo ? (
+              <img src={logo} className="w-full h-20 max-md:hidden" />
+            ) : (
+              <>
+                <AdbIcon
+                  sx={{
+                    display: { xs: "none", md: "flex" },
+                    mr: 1,
+                    color: Colors.primary,
+                    cursor: "pointer",
+                  }}
+                />
+                <Typography
+                  variant="h6"
+                  noWrap
+                  sx={{
+                    mr: 2,
+                    display: { xs: "none", md: "flex" },
+                    fontFamily: "Roboto",
+                    // fontFamily: "Caesar Dressing",
+                    fontWeight: 700,
+                    letterSpacing: ".3rem",
+                    color: Colors.primary,
+                    textDecoration: "none",
+                  }}
+                >
+                  ERGONISTOR
+                </Typography>
+              </>
+            )}
           </div>
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
@@ -135,34 +142,40 @@ const NavigationBar = () => {
               ))}
             </Menu>
           </Box>
-          <AdbIcon
-            sx={{
-              display: { xs: "flex", md: "none" },
-              mr: 1,
-              color: Colors.primary,
-              cursor: "pointer",
-            }}
-          />
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
-            sx={{
-              mr: 2,
-              display: { xs: "flex", md: "none" },
-              flexGrow: 1,
-              fontFamily: "Roboto",
-              // fontFamily: "Caesar Dressing",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: Colors.primary,
-              textDecoration: "none",
-            }}
-            onClick={navigateTo(Routes.Home.path)}
-          >
-            ERGONISTOR
-          </Typography>
+          {logo ? (
+            <img src={logo} className="w-full h-12 md:hidden" />
+          ) : (
+            <>
+              <AdbIcon
+                sx={{
+                  display: { xs: "flex", md: "none" },
+                  mr: 1,
+                  color: Colors.primary,
+                  cursor: "pointer",
+                }}
+              />
+              <Typography
+                variant="h5"
+                noWrap
+                component="a"
+                href="#app-bar-with-responsive-menu"
+                sx={{
+                  mr: 2,
+                  display: { xs: "flex", md: "none" },
+                  flexGrow: 1,
+                  fontFamily: "Roboto",
+                  // fontFamily: "Caesar Dressing",
+                  fontWeight: 700,
+                  letterSpacing: ".3rem",
+                  color: Colors.primary,
+                  textDecoration: "none",
+                }}
+                onClick={navigateTo(Routes.Home.path)}
+              >
+                ERGONISTOR
+              </Typography>
+            </>
+          )}
           <Box
             sx={{
               flexGrow: 1,

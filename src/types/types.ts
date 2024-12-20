@@ -90,4 +90,5 @@ export interface Project {
 export interface Slider {
   msg: string;
   imgs: string[];
+  logo?: string;
 }

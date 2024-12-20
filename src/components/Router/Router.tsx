@@ -3,10 +3,10 @@ import NavigationBar from "../NavigationBar/NavigationBar";
 import BottomBar from "../BottomBar/BottomBar";
 import { ContentProp } from "../../types/types";
 
-const Root = ({ content }: ContentProp) => {
+const Root = ({ content, logo }: ContentProp & { logo?: string }) => {
   return (
     <>
-      <NavigationBar />
+      <NavigationBar logo={logo} />
       <main className="w-full flex justify-center">
         <Outlet />
       </main>
