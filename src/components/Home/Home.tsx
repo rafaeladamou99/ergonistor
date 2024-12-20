@@ -46,6 +46,10 @@ const Home = ({
     );
   }, [sliderData]);
 
+  useEffect(() => {
+    getServices();
+  }, []);
+
   return (
     <div
       style={{
