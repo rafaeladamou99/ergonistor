@@ -1,8 +1,6 @@
-import "./About.scss";
-import Steps from "../Home/imgs/Steps.png";
-import car1 from "../Home/imgs/car-1.jpg";
-import Person from "../Person/Person";
 import { ContentProp } from "../../types/types";
+import Person from "../Person/Person";
+import "./About.scss";
 
 const About = ({ content }: ContentProp) => {
   return (
@@ -18,16 +16,6 @@ const About = ({ content }: ContentProp) => {
             ))}
           </>
         ))}
-        {/* <div className="about-container-title">
-          HOW WE OPERATE AND BRING OUR WORK INTO REALITY
-        </div>
-        <img
-          key={Steps}
-          src={Steps}
-          className="img-slider-img"
-          style={{ marginTop: "20px" }}
-        /> */}
-        {/* <div className="about-container-title">{content?.about.key_people}</div> */}
         <div className="w-full mt-5 flex gap-6 justify-center flex-wrap items-start">
           {content?.about.key_people.map((person) => (
             <Person

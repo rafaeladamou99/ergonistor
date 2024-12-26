@@ -1,11 +1,12 @@
-import { useEffect, useState } from "react";
 import ArrowBackOutlinedIcon from "@mui/icons-material/ArrowBackOutlined";
 import ArrowForwardOutlinedIcon from "@mui/icons-material/ArrowForwardOutlined";
 import CircleOutlinedIcon from "@mui/icons-material/CircleOutlined";
 import TripOriginOutlinedIcon from "@mui/icons-material/TripOriginOutlined";
-import "./ImageSlider.scss";
-import Button, { EButtonType } from "../../components/Button/Button";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Button, { EButtonType } from "../../components/Button/Button";
+import ImageView from "../ImageView/ImageView";
+import "./ImageSlider.scss";
 
 type ImageSliderProps = {
   images: {
@@ -49,26 +50,14 @@ export const ImageSlider = ({ images, message = "" }: ImageSliderProps) => {
     return () => clearInterval(slideInterval);
   }, [imageIndex, showNextImage]);
   return (
-    <section
-      aria-label="Image Slider"
-      //   style={{ width: "100%", height: "100%", position: "relative" }}
-      className="slider-container animate pop"
-    >
-      <div
-        // style={{
-        //   width: "100%",
-        //   height: "100%",
-        //   display: "flex",
-        //   overflow: "hidden",
-        // }}
-        className="images-container"
-      >
+    <section aria-label="Image Slider" className="slider-container animate pop">
+      <div className="images-container">
         {images.map(({ url, alt }, index) => (
-          <img
+          <ImageView
             key={url}
             src={url}
             alt={alt}
-            aria-hidden={imageIndex !== index}
+            ariaHidden={imageIndex !== index}
             className="img-slider-img"
             style={{ translate: `${-100 * imageIndex}%` }}
           />

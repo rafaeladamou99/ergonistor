@@ -81,7 +81,6 @@ const NavigationBar = ({ logo }: { logo?: string }) => {
                     mr: 2,
                     display: { xs: "none", md: "flex" },
                     fontFamily: "Roboto",
-                    // fontFamily: "Caesar Dressing",
                     fontWeight: 700,
                     letterSpacing: ".3rem",
                     color: Colors.primary,
@@ -132,7 +131,6 @@ const NavigationBar = ({ logo }: { logo?: string }) => {
                     textAlign="center"
                     sx={{
                       color: Colors.secondary,
-                      // fontFamily: "Caesar Dressing",
                       fontFamily: "Roboto",
                     }}
                   >
@@ -164,7 +162,6 @@ const NavigationBar = ({ logo }: { logo?: string }) => {
                   display: { xs: "flex", md: "none" },
                   flexGrow: 1,
                   fontFamily: "Roboto",
-                  // fontFamily: "Caesar Dressing",
                   fontWeight: 700,
                   letterSpacing: ".3rem",
                   color: Colors.primary,
@@ -193,7 +190,6 @@ const NavigationBar = ({ logo }: { logo?: string }) => {
                   display: "block",
                   fontSize: "24px",
                   fontFamily: "Roboto",
-                  // fontFamily: "Caesar Dressing",
                 }}
                 className="menu-items"
               >

@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from "react";
+import { useEffect, useMemo } from "react";
 import { useParams } from "react-router-dom";
 import useApi from "../../../api-service/useApiService";
 import { Service as IService } from "../../../types/types";
@@ -34,14 +34,7 @@ const Service = () => {
       }}
       className="h-fit"
     >
-      {/* <img
-        key={data?.img}
-        src={data?.img}
-        alt={data?.img}
-        className="item-card-img w-full aspect-video"
-      /> */}
       <ImageSlider images={sliderImgs} />
-
       <div className="app-container w-auto flex flex-col items-start gap-4">
         <div className="w-full max-w-[500px] text-4xl self-baseline">
           {data?.title}

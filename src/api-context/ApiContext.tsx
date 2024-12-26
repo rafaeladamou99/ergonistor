@@ -1,4 +1,3 @@
-// ApiContext.tsx
 import { createContext, useContext } from "react";
 import { Content } from "../types/types";
 

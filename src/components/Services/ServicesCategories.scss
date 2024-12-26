@@ -7,7 +7,6 @@
   .welcome-title {
     width: 100%;
     max-width: 500px;
-    // font-family: "Caesar Dressing";
     font-family: "Roboto";
     font-size: 38px;
     align-self: baseline;
@@ -30,7 +29,6 @@
     .services-container-title {
       margin-top: 20px;
       font-size: 32px;
-      // font-family: "Caesar Dressing";
       font-family: "Roboto";
     }
 
@@ -41,6 +39,34 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
+      width: 100%;
+
+      &.categories {
+
+        .item-card-container {
+          width: 100%;
+          max-width: 100%;
+          max-height: auto;
+          display: flex;
+          min-height: auto;
+          flex-direction: column;
+          gap: 20px;
+      
+          .item-card-img {
+              height: auto;
+              aspect-ratio: 3 / 1;
+              width: 100%;
+          }
+      
+          .item-card-title {
+              font-size: 24px;
+          }
+      
+          .item-card-description {
+              font-size: 18px;
+          }
+      }
+      }
     }
   }
 }

@@ -26,14 +26,14 @@ const Services = ({ content }: ContentProp) => {
         <div className="services-container-title">
           {content?.services.subtitle}
         </div>
-        <div className="services-container-content">
+        <div className="services-container-content categories">
           {data?.map(({ _id, img, title, description }, index) => (
             <ItemCard
               imageUrl={img}
               title={title}
               description={description ?? ""}
               onClick={openService(_id)}
-              className="animate pop"
+              className="animate pop max-w-full w-full"
               style={{ animationDelay: `${index * 0.4}s` }}
             />
           ))}

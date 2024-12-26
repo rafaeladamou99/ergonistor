@@ -1,4 +1,5 @@
 import { CSSProperties } from "react";
+import ImageView from "../ImageView/ImageView";
 import "./ItemCard.scss";
 
 interface IItemCard {
@@ -20,11 +21,11 @@ const ItemCard = ({
 }: IItemCard) => {
   return (
     <div
-      className={`item-card-container cursor-pointer custom-hover-effect ${className ?? ""}`}
+      className={`item-card-container cursor-pointer custom-hover-effect overflow-hidden ${className ?? ""}`}
       onClick={onClick}
       style={style}
     >
-      <img
+      <ImageView
         key={imageUrl}
         src={imageUrl}
         alt={imageUrl}

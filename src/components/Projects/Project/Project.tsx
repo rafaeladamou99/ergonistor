@@ -34,12 +34,6 @@ const Project = () => {
       }}
       className="h-fit"
     >
-      {/* <img
-        key={data?.img}
-        src={data?.img}
-        alt={data?.img}
-        className="item-card-img w-full aspect-video"
-      /> */}
       <ImageSlider images={sliderImgs} />
       <div className="app-container w-auto flex flex-col items-start gap-4">
         <div className="w-full max-w-[500px] text-4xl self-baseline">

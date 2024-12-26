@@ -1,4 +1,3 @@
-// ApiProvider.tsx
 import React, { useState, useEffect, ReactNode } from "react";
 import useApi from "../api-service/useApiService";
 import { Content, ContentResponse } from "../types/types";

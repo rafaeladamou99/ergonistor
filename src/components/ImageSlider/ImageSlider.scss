@@ -40,11 +40,6 @@
 }
 
 .img-info-label {
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: center;
-  // align-items: center;
-  // position: absolute;
   gap: 2rem;
   top: 0;
   bottom: 0;
@@ -143,14 +138,3 @@
 .img-slider-btn:focus-visible > * {
   animation: squish 200ms ease-in-out;
 }
-
-// @media not (prefers-reduced-motion) {
-//   .img-slider-img {
-//     transition: translate 300ms ease-in-out;
-//   }
-
-//   .img-slider-btn:hover > *,
-//   .img-slider-btn:focus-visible > * {
-//     animation: squish 200ms ease-in-out;
-//   }
-// }
