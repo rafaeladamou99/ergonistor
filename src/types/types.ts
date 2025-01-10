@@ -69,7 +69,6 @@ export interface Service {
 
 export interface ServiceCategories {
   title: string;
-  description: string;
   img: string;
   _id: string;
 }

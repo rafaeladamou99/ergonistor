@@ -5,14 +5,14 @@ import "./ItemCard.scss";
 interface IItemCard {
   imageUrl: string;
   title: string;
-  description: string;
+  description?: string;
   onClick: () => void;
   className?: string;
   style?: CSSProperties;
 }
 
 const ItemCard = ({
-  description,
+  description = "",
   imageUrl,
   onClick,
   title,

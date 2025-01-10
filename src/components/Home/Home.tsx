@@ -71,11 +71,10 @@ const Home = ({
             {content?.services.subtitle}
           </div>
           <div className="services-container-content">
-            {servicesData?.map(({ _id, img, title, description }, index) => (
+            {servicesData?.map(({ _id, img, title }, index) => (
               <ItemCard
                 imageUrl={img}
                 title={title}
-                description={description ?? ""}
                 onClick={openService(_id)}
                 className="animate pop"
                 style={{ animationDelay: `${index * 0.4}s` }}

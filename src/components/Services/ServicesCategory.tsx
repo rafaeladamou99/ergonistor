@@ -28,11 +28,10 @@ const ServicesCategory = ({ content }: ContentProp) => {
           {content?.services.subtitle}
         </div>
         <div className="services-container-content">
-          {data?.map(({ _id, img1, title, paragraphs }, index) => (
+          {data?.map(({ _id, img1, title }, index) => (
             <ItemCard
               imageUrl={img1}
               title={title}
-              description={paragraphs?.[0] ?? ""}
               onClick={openService(_id)}
               className="animate pop"
               style={{ animationDelay: `${index * 0.4}s` }}
