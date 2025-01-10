@@ -141,7 +141,7 @@ const NavigationBar = ({ logo }: { logo?: string }) => {
             </Menu>
           </Box>
           {logo ? (
-            <img src={logo} className="w-auto h-12 md:hidden" />
+            <img src={logo} className="w-auto h-12 lg:hidden" />
           ) : (
             <>
               <AdbIcon
