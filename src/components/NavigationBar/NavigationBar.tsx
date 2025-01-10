@@ -179,7 +179,7 @@ const NavigationBar = ({ logo }: { logo?: string }) => {
               </Typography>
             </>
           )}
-          <div className="w-12 h-12" />
+          <div className="min-w-12 h-12" />
           <Box
             sx={{
               flexGrow: 1,
