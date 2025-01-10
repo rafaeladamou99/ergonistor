@@ -59,11 +59,11 @@ const NavigationBar = ({ logo }: { logo?: string }) => {
           sx={{ display: "flex", justifyContent: "space-around" }}
         >
           <div
-            className="menu-items logo"
+            className="menu-items logo max-lg:hidden"
             onClick={navigateTo(Routes.Home.path)}
           >
             {logo ? (
-              <img src={logo} className="w-full h-20 max-md:hidden" />
+              <img src={logo} className="w-full h-20 max-lg:hidden" />
             ) : (
               <>
                 <AdbIcon
@@ -141,7 +141,7 @@ const NavigationBar = ({ logo }: { logo?: string }) => {
             </Menu>
           </Box>
           {logo ? (
-            <img src={logo} className="w-full h-12 md:hidden" />
+            <img src={logo} className="w-auto h-12 md:hidden" />
           ) : (
             <>
               <AdbIcon
@@ -173,6 +173,7 @@ const NavigationBar = ({ logo }: { logo?: string }) => {
               </Typography>
             </>
           )}
+          <div className="w-12 h-12" />
           <Box
             sx={{
               flexGrow: 1,
