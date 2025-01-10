@@ -34,6 +34,7 @@ const Services = ({ content }: ContentProp) => {
               onClick={openService(_id)}
               className="animate pop max-w-full w-full"
               style={{ animationDelay: `${index * 0.4}s` }}
+              hideDescription
             />
           ))}
         </div>

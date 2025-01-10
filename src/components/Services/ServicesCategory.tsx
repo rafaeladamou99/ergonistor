@@ -35,6 +35,7 @@ const ServicesCategory = ({ content }: ContentProp) => {
               onClick={openService(_id)}
               className="animate pop"
               style={{ animationDelay: `${index * 0.4}s` }}
+              hideDescription
             />
           ))}
         </div>

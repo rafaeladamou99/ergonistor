@@ -9,6 +9,7 @@ interface IItemCard {
   onClick: () => void;
   className?: string;
   style?: CSSProperties;
+  hideDescription?: boolean;
 }
 
 const ItemCard = ({
@@ -18,6 +19,7 @@ const ItemCard = ({
   title,
   className,
   style,
+  hideDescription = false,
 }: IItemCard) => {
   return (
     <div
@@ -32,7 +34,9 @@ const ItemCard = ({
         className="item-card-img"
       />
       <div className="item-card-title"> {title}</div>
-      <div className="item-card-description">{description}</div>
+      {!hideDescription && (
+        <div className="item-card-description">{description}</div>
+      )}
     </div>
   );
 };
