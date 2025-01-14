@@ -1,4 +1,5 @@
 export interface Content {
+  copyrightMsg: string;
   home: {
     title: string;
     msg: string;
@@ -39,6 +40,7 @@ export interface Content {
     msg: string;
     telephone: ContactMedium;
     email: ContactMedium;
+    linkedin: ContactMedium;
   };
 }
 

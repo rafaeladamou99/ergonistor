@@ -11,9 +11,7 @@ const BottomBar = ({ content }: ContentProp) => {
   const longitude = "-1.0960133";
   return (
     <div className="app-container bottom-bar">
-      <div className="company-mark">
-        Copyright © 2023 Ergonistor Limited - All Rights Reserved.
-      </div>
+      <div className="company-mark">{content?.copyrightMsg}</div>
       <div className="contact-icons">
         <Link
           to={`https://www.google.com/maps?q=${latitude},${longitude}`}
@@ -27,7 +25,7 @@ const BottomBar = ({ content }: ContentProp) => {
         <Link to={`mailto:${content?.contact.email.value}`}>
           <EmailIcon sx={{ fill: "#2F88FF" }} className="cursor-pointer" />
         </Link>
-        <Link to={`mailto:${content?.contact.email.value}`}>
+        <Link to={`mailto:${content?.contact.linkedin.value}`}>
           <LinkedInIcon sx={{ fill: "#0a66c2" }} className="cursor-pointer" />
         </Link>
       </div>

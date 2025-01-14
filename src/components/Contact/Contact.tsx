@@ -13,9 +13,11 @@ const Contact = ({ content }: ContentProp) => {
     window.location.href = `tel:${phone}`;
   };
 
-  const goToLinkedIn = (url: string) => () => {
-    window.open(url);
-  };
+  const goToLinkedIn =
+    (url: string = "") =>
+    () => {
+      window.open(url);
+    };
 
   return (
     <div className="max-w-[1150px] w-full flex flex-col gap-16 px-4 my-5">
@@ -54,12 +56,12 @@ const Contact = ({ content }: ContentProp) => {
         </div>
         <div
           className="flex flex-col gap-4 border border-gray-400 w-full max-w-80 p-4 rounded-xl items-center cursor-pointer"
-          onClick={goToLinkedIn("https://linkedin.com/in/rafaeladamou")}
+          onClick={goToLinkedIn(content?.contact.linkedin.value)}
         >
           <LinkedInIcon sx={{ fill: "#0a66c2", fontSize: "50px" }} />
 
-          <span className="text-lg">{"Linkedin"}</span>
-          <span>{"https://linkedin.com/in/rafaeladamou"}</span>
+          <span className="text-lg">{content?.contact.linkedin.msg}</span>
+          <span>{content?.contact.linkedin.value}</span>
         </div>
       </div>
     </div>
