@@ -23,7 +23,7 @@ const pages = [
   Routes.Services,
   Routes.Projects,
   Routes.About,
-  Routes.FAQs,
+  // Routes.FAQs,
   Routes.Contact,
 ];
 

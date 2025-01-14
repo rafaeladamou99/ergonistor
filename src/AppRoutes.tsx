@@ -25,7 +25,7 @@ const AppRoutes = () => {
   const router = createBrowserRouter([
     {
       path: Routes.Home.path,
-      element: <Router content={data} logo={sliderData?.[0]?.logo}/>,
+      element: <Router content={data} logo={sliderData?.[0]?.logo} />,
       errorElement: <Error />,
       children: [
         {
@@ -47,7 +47,7 @@ const AppRoutes = () => {
         { path: Routes.Projects.path, element: <Projects content={data} /> },
         { path: Routes.Projects.Project.routerPath, element: <Project /> },
         { path: Routes.About.path, element: <About content={data} /> },
-        { path: Routes.FAQs.path, element: <FAQs content={data} /> },
+        // { path: Routes.FAQs.path, element: <FAQs content={data} /> },
         { path: Routes.Contact.path, element: <Contact content={data} /> },
       ],
     },

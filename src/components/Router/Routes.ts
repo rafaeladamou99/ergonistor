@@ -39,10 +39,10 @@ export const Routes = {
     name: "About",
     path: "/about",
   },
-  FAQs: {
-    name: "FAQs",
-    path: "/faqs",
-  },
+  // FAQs: {
+  //   name: "FAQs",
+  //   path: "/faqs",
+  // },
   Contact: {
     name: "Contact",
     path: "/contact",
