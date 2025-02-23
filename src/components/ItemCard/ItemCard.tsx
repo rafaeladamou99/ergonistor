@@ -23,7 +23,7 @@ const ItemCard = ({
 }: IItemCard) => {
   return (
     <div
-      className={`item-card-container cursor-pointer custom-hover-effect overflow-hidden ${className ?? ""}`}
+      className={`rounded-2xl border border-gray-400 item-card-container cursor-pointer custom-hover-effect overflow-hidden ${className ?? ""}`}
       onClick={onClick}
       style={style}
     >
@@ -33,9 +33,11 @@ const ItemCard = ({
         alt={imageUrl}
         className="item-card-img"
       />
-      <div className="item-card-title"> {title}</div>
+      <div className={`item-card-title px-1 ${hideDescription ? "pb-1" : ""}`}>
+        {title}
+      </div>
       {!hideDescription && (
-        <div className="item-card-description">{description}</div>
+        <div className="item-card-description px-1 pb-1">{description}</div>
       )}
     </div>
   );
