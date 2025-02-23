@@ -2,14 +2,9 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import useApi from "../../api-service/useApiService";
 import Button, { EButtonType } from "../../components/Button/Button";
-import {
-  ContentProp,
-  Service,
-  ServiceCategories,
-  Slider,
-} from "../../types/types";
+import { ContentProp, ServiceCategories, Slider } from "../../types/types";
+import CategoriesCard from "../CategoriesCard/CategoriesCard";
 import { ImageSlider } from "../ImageSlider/ImageSlider";
-import ItemCard from "../ItemCard/ItemCard";
 import "./Home.scss";
 
 const Home = ({
@@ -62,23 +57,17 @@ const Home = ({
       <ImageSlider images={sliderImgs} message={sliderData?.[0]?.msg} />
       <div className="app-container home-page">
         <div className="welcome-title">{content?.home.title}</div>
-        <p className="welcome-msg">{content?.home.msg}</p>
-        {/* <Button type={EButtonType.primary} onClick={navigateToAboutUs}>
-          About Us
-        </Button> */}
+        <p className="welcome-msg italic">{content?.home.msg}</p>
         <div className="services-container">
           <div className="services-container-title">
             {content?.services.subtitle}
           </div>
           <div className="services-container-content">
-            {servicesData?.map(({ _id, img, title }, index) => (
-              <ItemCard
-                imageUrl={img}
+            {servicesData?.map(({ _id, title }, index) => (
+              <CategoriesCard
                 title={title}
                 onClick={openService(_id)}
-                className="animate pop"
                 style={{ animationDelay: `${index * 0.4}s` }}
-                hideDescription
               />
             ))}
           </div>
