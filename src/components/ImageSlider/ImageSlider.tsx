@@ -106,7 +106,7 @@ export const ImageSlider = ({ images, message = "" }: ImageSliderProps) => {
       </div>
       {message && (
         <div className="img-info-label flex flex-col items-center justify-center absolute animate pop delay-4 max-lg:hidden">
-          <p>{message}</p>
+          <p className="italic">{message}</p>
           <Button type={EButtonType.secondary} onClick={navigateToProjects}>
             Projects
           </Button>
