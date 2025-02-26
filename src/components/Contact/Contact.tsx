@@ -31,7 +31,7 @@ const Contact = ({ content }: ContentProp) => {
       </div>
       <div className="flex flex-wrap gap-10 w-full justify-center">
         <div
-          className="flex flex-col gap-4 border border-gray-400 w-full max-w-80 p-4 rounded-xl items-center cursor-pointer"
+          className="flex flex-col gap-4 border border-gray-400 w-full max-w-80 p-4 rounded-xl items-center cursor-pointer custom-hover-effect"
           onClick={sendEmail("ergonistor@ergonistor.com")}
         >
           <FontAwesomeIcon
@@ -43,7 +43,7 @@ const Contact = ({ content }: ContentProp) => {
           <span>{content?.contact.email.value}</span>
         </div>
         <div
-          className="flex flex-col gap-4 border border-gray-400 w-full max-w-80 p-4 rounded-xl items-center cursor-pointer"
+          className="flex flex-col gap-4 border border-gray-400 w-full max-w-80 p-4 rounded-xl items-center cursor-pointer custom-hover-effect"
           onClick={callUs("99999999")}
         >
           <FontAwesomeIcon
@@ -55,7 +55,7 @@ const Contact = ({ content }: ContentProp) => {
           <span>{content?.contact.telephone.value}</span>
         </div>
         <div
-          className="flex flex-col gap-4 border border-gray-400 w-full max-w-80 p-4 rounded-xl items-center cursor-pointer"
+          className="flex flex-col gap-4 border border-gray-400 w-full max-w-80 p-4 rounded-xl items-center cursor-pointer custom-hover-effect"
           onClick={goToLinkedIn(content?.contact.linkedin.value)}
         >
           <LinkedInIcon sx={{ fill: "#0a66c2", fontSize: "50px" }} />
