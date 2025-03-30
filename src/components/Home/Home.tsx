@@ -56,8 +56,8 @@ const Home = ({
     >
       <ImageSlider images={sliderImgs} message={sliderData?.[0]?.msg} />
       <div className="app-container home-page">
-        <div className="welcome-title">{content?.home.title}</div>
-        <p className="welcome-msg">{content?.home.msg}</p>
+        <div className="welcome-title italic">{content?.home.title}</div>
+        <p className="welcome-msg text-xl">{content?.home.msg}</p>
         <div className="services-container">
           <div className="services-container-title">
             {content?.services.subtitle}

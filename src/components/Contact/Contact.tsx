@@ -22,10 +22,10 @@ const Contact = ({ content }: ContentProp) => {
   return (
     <div className="max-w-[1150px] w-full flex flex-col gap-16 px-4 my-5">
       <div className="w-full">
-        <div className="w-full max-w-[500px] text-4xl self-baseline">
+        <div className="w-full max-w-[500px] text-4xl self-baseline text-secondary">
           {content?.contact.title}
         </div>
-        <p className="w-full max-w-[700px] self-baseline">
+        <p className="w-full max-w-[700px] self-baseline text-xl">
           {content?.contact.msg}
         </p>
       </div>

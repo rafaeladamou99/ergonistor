@@ -21,7 +21,7 @@ const Services = ({ content }: ContentProp) => {
   return (
     <div className="app-container services-page">
       <div className="welcome-title">{content?.services.title}</div>
-      <p className="welcome-msg">{content?.services.msg}</p>
+      <p className="welcome-msg text-xl">{content?.services.msg}</p>
       <div className="services-container">
         <div className="services-container-title">
           {content?.services.subtitle}

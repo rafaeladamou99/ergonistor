@@ -27,7 +27,7 @@ const Projects = ({ content }: ContentProp) => {
   return (
     <div className="app-container projects-page">
       <div className="welcome-title">{content?.projects.title}</div>
-      <p className="welcome-msg">{content?.projects.msg}</p>
+      <p className="welcome-msg text-xl">{content?.projects.msg}</p>
       <div className="projects-container">
         <div className="projects-container-title">
           {content?.projects.subtitle}

@@ -6,11 +6,11 @@ const About = ({ content }: ContentProp) => {
   return (
     <div className="app-container about-page">
       <div className="welcome-title">{content?.about.title}</div>
-      <p className="welcome-msg">{content?.about.msg}</p>
+      <p className="welcome-msg text-xl">{content?.about.msg}</p>
       <div className="about-container">
         {content?.about.sections.map((section) => (
           <>
-            <div className="about-container-title">{section.title}</div>
+            <div className="about-container-title text-secondary">{section.title}</div>
             {section.paragraphs.map((paragraph) => (
               <p>{paragraph}</p>
             ))}
