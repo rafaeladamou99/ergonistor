@@ -2,6 +2,7 @@ export interface Content {
   copyrightMsg: string;
   home: {
     title: string;
+    subtitle: string;
     msg: string;
     msg2: string;
   };
