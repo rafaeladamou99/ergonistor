@@ -7,9 +7,10 @@ import { Link } from "react-router-dom";
 import { ContentProp } from "../../types/types";
 
 const BottomBar = ({ content }: ContentProp) => {
-  const latitude = "50.7926524";
-  const longitude = "-1.0960133";
-  return (
+  const latitude = "34.777435";
+  const longitude = "32.435310";
+
+ return (
     <div className="app-container bottom-bar">
       <div className="company-mark">{content?.copyrightMsg}</div>
       <div className="contact-icons">
