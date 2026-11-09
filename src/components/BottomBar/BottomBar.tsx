@@ -22,7 +22,7 @@ const BottomBar = ({ content }: ContentProp) => (
       <Link to={`mailto:${content?.contact.email.value}`}>
         <EmailIcon sx={{ fill: "#2F88FF" }} className="cursor-pointer" />
       </Link>
-      <Link to={`mailto:${content?.contact.linkedin.value}`}>
+      <Link to={content?.contact.linkedin.value ?? ""} target="_blank">
         <LinkedInIcon sx={{ fill: "#0a66c2" }} className="cursor-pointer" />
       </Link>
     </div>

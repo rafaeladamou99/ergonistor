@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import useApi from "../../api-service/useApiService";
 import { ContentProp, Service } from "../../types/types";
-import ItemCard from "../ItemCard/ItemCard";
+import CategoriesCard from "../CategoriesCard/CategoriesCard";
 import "./ServicesCategories.scss";
 
 const ServicesCategory = ({ content }: ContentProp) => {
@@ -27,15 +27,13 @@ const ServicesCategory = ({ content }: ContentProp) => {
         <div className="services-container-title">
           {content?.services.subtitle}
         </div>
-        <div className="services-container-content">
-          {data?.map(({ _id, img1, title }, index) => (
-            <ItemCard
-              imageUrl={img1}
+        <div className="services-container-content categories">
+          {data?.map(({ _id, title }, index) => (
+            <CategoriesCard
+              key={_id}
               title={title}
               onClick={openService(_id)}
-              className="animate pop"
               style={{ animationDelay: `${index * 0.4}s` }}
-              hideDescription
             />
           ))}
         </div>

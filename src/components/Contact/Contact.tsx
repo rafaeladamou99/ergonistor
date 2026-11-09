@@ -5,13 +5,17 @@ import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 const Contact = ({ content }: ContentProp) => {
-  const sendEmail = (email: string) => () => {
-    window.location.href = `mailto:${email}`;
-  };
+  const sendEmail =
+    (email: string = "") =>
+    () => {
+      window.location.href = `mailto:${email}`;
+    };
 
-  const callUs = (phone: string) => () => {
-    window.location.href = `tel:${phone}`;
-  };
+  const callUs =
+    (phone: string = "") =>
+    () => {
+      window.location.href = `tel:${phone}`;
+    };
 
   const goToLinkedIn =
     (url: string = "") =>
@@ -32,7 +36,7 @@ const Contact = ({ content }: ContentProp) => {
       <div className="flex flex-wrap gap-10 w-full justify-center">
         <div
           className="flex flex-col gap-4 border border-gray-400 w-full max-w-80 p-4 rounded-xl items-center cursor-pointer custom-hover-effect"
-          onClick={sendEmail("ergonistor@ergonistor.com")}
+          onClick={sendEmail(content?.contact.email.value)}
         >
           <FontAwesomeIcon
             icon={faEnvelope}
@@ -44,7 +48,7 @@ const Contact = ({ content }: ContentProp) => {
         </div>
         <div
           className="flex flex-col gap-4 border border-gray-400 w-full max-w-80 p-4 rounded-xl items-center cursor-pointer custom-hover-effect"
-          onClick={callUs("99999999")}
+          onClick={callUs(content?.contact.telephone.value)}
         >
           <FontAwesomeIcon
             icon={faPhone}
@@ -61,7 +65,6 @@ const Contact = ({ content }: ContentProp) => {
           <LinkedInIcon sx={{ fill: "#0a66c2", fontSize: "50px" }} />
 
           <span className="text-lg">{content?.contact.linkedin.msg}</span>
-          <span>{content?.contact.linkedin.value}</span>
         </div>
       </div>
     </div>
